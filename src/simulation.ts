@@ -1,4 +1,4 @@
-import { mean, stdDev } from "./math.ts";
+import { mean, sem, stdDev, roundTo } from "./math.ts";
 
 /**
  * Simulate experiment 1 from the paper
@@ -43,7 +43,7 @@ export const simulate = (
     const anxietyDeathRounds = [];
     const normalDeathRounds = [];
 
-    console.log("round,alive,anxietyDeaths,normalDeaths");
+    // console.log("round,alive,anxietyDeaths,normalDeaths");
     const printStats = () => {
       console.log(
         round, // Round number
@@ -131,8 +131,15 @@ export const simulate = (
     );
   }
 
-  console.log("Average anxiety lifespan:", mean(avgAnxietyLifespans));
-  console.log("Std dev anxiety lifespan:", stdDev(avgAnxietyLifespans));
-  console.log("Average normal lifespan:", mean(avgNormalLifespans));
-  console.log("Std dev normal lifespan:", stdDev(avgNormalLifespans));
+  const ROUND_TO = 2;
+  console.log("Mean anxiety:", roundTo(mean(avgAnxietyLifespans), ROUND_TO));
+  console.log(
+    "StdDev anxiety:",
+    roundTo(stdDev(avgAnxietyLifespans), ROUND_TO)
+  );
+  console.log("Sem anxiety:", roundTo(sem(avgAnxietyLifespans), ROUND_TO));
+
+  console.log("Mean normal:", roundTo(mean(avgNormalLifespans), ROUND_TO));
+  console.log("StdDev normal:", roundTo(stdDev(avgNormalLifespans), ROUND_TO));
+  console.log("Sem normal:", roundTo(sem(avgNormalLifespans), ROUND_TO));
 };
