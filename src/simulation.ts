@@ -23,11 +23,16 @@ export const simulate = (
   const avgAnxietyLifespans = [];
   const avgNormalLifespans = [];
 
+  const numWithAnxiety = Math.floor(n * pAnxiety);
+  console.log("Number of nodes with anxiety:", numWithAnxiety);
+
   while (trials--) {
     // console.log("Trial", trials);
     // Undirected adjacency matrix
     const adjMatrix = new Array(n).fill(0).map(() => new Array(n).fill(0));
-    const hasAnxiety = new Array(n).fill(0).map(() => Math.random() < pAnxiety);
+    const hasAnxiety = new Array(n)
+      .fill(false)
+      .map((_, i) => i < numWithAnxiety);
     const isAlive = new Array(n).fill(true);
     const money = new Array(n).fill(neighborMoney * n);
 
