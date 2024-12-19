@@ -48,9 +48,8 @@ export const simulateSleep = (
   if (trials < 1) throw new Error("trials must be at least 1");
   if (k >= n) throw new Error("k must be less than n");
   if (k % 2 !== 0) throw new Error("k must be even");
-  if (lambda < 0 || lambda > 1)
-    throw new Error("lambda must be between 0 and 1");
-  if (alpha < 0 || alpha > 1) throw new Error("alpha must be between 0 and 1");
+  if (lambda <= 1) throw new Error("lambda must be greater than 1");
+  if (alpha <= 1) throw new Error("alpha must be greater than 1");
   if (b < 0) throw new Error("b must be non-negative");
 
   const results: Result[] = [];
