@@ -1,4 +1,4 @@
-import { simulateSleep } from "./src/sleep.ts";
+import { simulateSleep } from "./modules/sleep.ts";
 
 const outfile = "output.csv";
 
