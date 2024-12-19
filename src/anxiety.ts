@@ -1,3 +1,4 @@
+// anxiety.ts
 // A simulation of social anxiety in the face of murderers
 // Unused in the paper but I thought about it a bit
 

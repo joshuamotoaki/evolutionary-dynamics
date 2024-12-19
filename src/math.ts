@@ -1,3 +1,5 @@
+// math.ts
+
 export const mean = (arr: number[]) =>
   arr.reduce((acc, x) => acc + x, 0) / arr.length;
 
