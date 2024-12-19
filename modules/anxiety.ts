@@ -5,7 +5,7 @@
 import { mean, sem, stdDev, roundTo } from "./math.ts";
 
 /**
- * Simulate experiment 1 from the paper
+ * Simulate anxiety experiment
  * @param trials The number of trials to run
  * @param n The number of nodes in the graph
  * @param pAnxiety The probability of a node being an anxiety node
@@ -14,7 +14,7 @@ import { mean, sem, stdDev, roundTo } from "./math.ts";
  * @param neighborMoney The amount of money a node gives to its neighbors
  * @param livingCost The cost of living per round
  */
-export const simulate = (
+export const simulateAnxiety = (
   trials: number,
   n: number,
   pAnxiety: number,
