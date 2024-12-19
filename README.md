@@ -8,7 +8,7 @@ This report is in no way comprehensive, but eventually, I might try to expand on
 
 ## Running the code
 
-The individual simulation units are in the `src` directory. To run the simulations, modify `main.ts` to include the desired parameters and then run `deno run main.ts` in the root directory. This will output the results to the console. It will most likely work with NodeJS as well, but I have not tested it.
+The individual simulation units are in the `modules` directory. To run the simulations, modify `main.ts` to include the desired parameters and then run `deno run main.ts` in the root directory. This will output the results to the console. It will most likely work with NodeJS as well, but I have not tested it.
 
 ## License
 
